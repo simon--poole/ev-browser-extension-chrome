@@ -1,0 +1,5 @@
+#showCommentsButton, #hideCommentsButton {
+    position: relative;
+    width: 100%;
+    text-transform: uppercase;
+}
