@@ -23,7 +23,6 @@ var channels = [ //channel whitelist, youtube id
     'UCPvn7OUsnyc9hINqbY7EmCA', //csgo tv
     'UC3EVJoJw7OajdrYmBfCvcdw', //faceit
     'UCBvPF-tKhZVrp_mW_sXAKsg', //game on
-    'UCHq-FOX_hMDGZEwdBGZe1uw', //gfinity
     'UCbEhNEf6zVdmd4C61Ayvv2w', //joindota
     'UC6vQmbHIu4Ksd4U0EIAVbrg', //"dota 2 esports tv"
     'UCQfAxSNTJvLISaFNJ0Dmg8w', //beyond the summit

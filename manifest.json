@@ -1,13 +1,13 @@
 {
     "manifest_version": 2,
-    "name": "EventVODs Spoiler Prevention BETA",
+    "name": "EventVODs Spoiler Prevention",
     "short_name": "EV",
     "description": "Hides related videos, comments and video length by default on Youtube to prevent spoilers.",
     "icons": {
         "48": "assets/img/favicon.png",
         "128": "assets/img/icon.png"
     },
-    "version": "0.2.1",
+    "version": "1.0.0",
     "homepage_url": "http://eventvods.com",
     "browser_action": {
         "default_icon": "assets/img/icon.png",
