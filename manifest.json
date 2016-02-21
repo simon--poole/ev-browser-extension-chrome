@@ -4,18 +4,19 @@
     "short_name": "EV",
     "description": "Hides related videos, comments and video length by default on Youtube to prevent spoilers.",
     "icons": {
-        "48": "assets/img/favicon.png"
+        "48": "assets/img/favicon.png",
+        "128": "assets/img/icon.png"
     },
-    "version": "0.2",
+    "version": "0.2.1",
     "homepage_url": "http://eventvods.com",
     "browser_action": {
-        "default_icon": "assets/img/toolbar.png",
+        "default_icon": "assets/img/icon.png",
         "default_popup": "pages/popup.html"
     },
     "content_scripts": [{
         "matches": ["*://www.youtube.com/*", "*://youtube.com/*"],
         "exclude_matches": ["*://www.youtube.com/*&list=*", "*://youtube.com/*&list=*"],
-        "css": ["assets/css/youtube_normal.css"],
+        "css": ["assets/css/style.css"],
         "js": ["assets/js/jquery.min.js", "assets/js/content_script.js"]
     }],
     "storage": {
