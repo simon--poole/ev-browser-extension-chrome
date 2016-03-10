@@ -49,6 +49,13 @@ body {
 #logo {
   width: 250px;
 }
+#channels ul {
+  list-style: none;
+  text-align: left;
+}
+#channels checkbox {
+  font-size: xx-large;
+}
 .square label:after {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
@@ -85,4 +92,90 @@ body {
   height: 1em;
   fill: currentColor;
   vertical-align: -3px;
+}
+.btn {
+  line-height: 1em;
+  font-family: arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid #3cff85;
+  color: #3cff85;
+  margin: 0;
+  padding: 6px 14px;
+  border-radius: 24px;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  width: auto;
+  white-space: nowrap;
+}
+.btn:hover {
+  background-color: rgba(60, 255, 133, 0.12);
+  color: #6fffa5;
+}
+.btn.solid {
+  background: #3cff85;
+  color: #343850;
+}
+.btn.solid:hover {
+  background-color: #22ff75;
+  color: #2a2d3e;
+}
+.btn.icon {
+  position: relative;
+}
+.btn.icon i {
+  position: absolute;
+  left: 14px;
+  line-height: 18px;
+  font-size: 18px;
+}
+.btn.icon span {
+  padding-left: 22px;
+  display: block;
+}
+.btn.lg {
+  padding: 9px 20px;
+}
+.btn.small {
+  font-size: 11px;
+  padding: 2px 6px;
+}
+.form-style {
+  border-radius: 2px;
+  outline: none;
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: normal;
+  padding: 4px 5px;
+  background: transparent;
+  border: 2px solid #535a83;
+  color: #a4abc1;
+}
+.form-style:focus {
+  border-color: #a4abc1;
+  color: #d3d7e3;
+}
+.form-style::-webkit-input-placeholder {
+  font-size: 18px;
+  line-height: 20px;
+  color: #8690af;
+}
+.form-style::-moz-placeholder {
+  font-size: 18px;
+  line-height: 20px;
+  color: #8690af;
+}
+.form-style:-moz-placeholder {
+  font-size: 18px;
+  line-height: 20px;
+  color: #8690af;
+}
+.form-style:-ms-input-placeholder {
+  font-size: 18px;
+  line-height: 20px;
+  color: #8690af;
 }

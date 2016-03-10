@@ -1,41 +1,88 @@
 <!doctype html>
-<html>
+<html ng-app="evSettings">
     <head>
         <title>
             EventVODs Settings
         </title>
         <link rel="stylesheet" href="../assets/css/popup.css" />
+        <script src="../assets/js/jquery.min.js">
+        </script>
+        <script src="../assets/js/angular.min.js">
+        </script>
+        <script src="../assets/js/app.js">
+        </script>
         <script src="../assets/js/popup.js">
         </script>
     </head>
-    <body>
+    <body ng-controller="evSettingsController">
         <img src="../assets/img/logo.png" id="logo" />
         <div class="group">
+            <a class="btn lg solid" ng-show="!showChannels" ng-click="showChannels = true">
+                Edit Channel List
+                <svg class="icon">
+                    <symbol id="icon-circle-right" viewBox="0 0 1024 1024">
+                        <title>
+                            circle-right
+                        </title>
+                        <path class="path1" d="M512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM512 928c-229.75 0-416-186.25-416-416s186.25-416 416-416 416 186.25 416 416-186.25 416-416 416z">
+                        </path>
+                        <path class="path2" d="M354.744 706.744l90.512 90.512 285.254-285.256-285.256-285.254-90.508 90.508 194.744 194.746z">
+                        </path>
+                    </symbol>
+                    <use xlink:href="#icon-circle-right">
+                    </use>
+                </svg>
+            </a>
+            <a class="btn lg solid" ng-show="showChannels" ng-click="saveChannels()">
+                Save
+                <svg class="icon">
+                    <symbol id="icon-circle-left" viewBox="0 0 1024 1024">
+                        <title>
+                            circle-left
+                        </title>
+                        <path class="path1" d="M512 1024c282.77 0 512-229.23 512-512s-229.23-512-512-512-512 229.23-512 512 229.23 512 512 512zM512 96c229.75 0 416 186.25 416 416s-186.25 416-416 416-416-186.25-416-416 186.25-416 416-416z">
+                        </path>
+                        <path class="path2" d="M669.256 317.256l-90.512-90.512-285.254 285.256 285.256 285.254 90.508-90.508-194.744-194.746z">
+                        </path>
+                    </symbol>
+                    <use xlink:href="#icon-circle-left">
+                    </use>
+                </svg>
+            </a>
+        </div>
+        <div class="group" ng-show="showChannels" id="channels">
+            <input type="text" placeholder="Filter Channels" ng-model="filter.name" class="form-style" />
+            <ul><li ng-repeat="c in channels | toArray | filter:filter | orderBy:'name'">
+            <input type="checkbox" ng-attr-id="{{c.name}}" ng-model="c.run" />
+            <label ng-attr-for="{{c.name}}">{{c.name.substring(1, c.name.length)}}</label>
+            </li></ul>
+        </div>
+        <div class="group" ng-hide="showChannels">
             <label for="related">
                 Hide Related Videos
             </label>
         </div>
-        <div class="square">
+        <div class="square" ng-hide="showChannels">
             <input type="checkbox" value="1" id="related" name="related" class="checkbox" />
             <label for="related">
             </label>
         </div>
-        <div class="group">
+        <div class="group" ng-hide="showChannels">
             <label for="comments">
                 Hide Comments
             </label>
         </div>
-        <div class="square">
+        <div class="square" ng-hide="showChannels">
             <input type="checkbox" value="1" id="comments" name="comments" class="checkbox" />
             <label for="comments">
             </label>
         </div>
-        <div class="group">
+        <div class="group" ng-hide="showChannels">
             <label for="length">
                 Hide Video Length
             </label>
         </div>
-        <div class="square">
+        <div class="square" ng-hide="showChannels">
             <input type="checkbox" value="1" id="length" name="length" class="checkbox" />
             <label for="length">
             </label>

@@ -19,8 +19,5 @@
         "css": ["assets/css/style.css"],
         "js": ["assets/js/jquery.min.js", "assets/js/content_script.js"]
     }],
-    "storage": {
-        "managed_schema": "schema.json"
-    },
     "permissions": ["activeTab", "storage", "*://*.youtube.com/*"]
 }

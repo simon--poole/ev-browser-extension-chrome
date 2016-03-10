@@ -104,6 +104,15 @@ body {
 #logo {
 	width: 250px;
 }
+#channels {
+	ul {
+		list-style: none;
+		text-align: left;
+	}
+	checkbox {
+		font-size: xx-large;
+	}
+}
 .square label:after {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	filter: alpha(opacity=0);
@@ -142,4 +151,94 @@ body {
 	height: 1em;
 	fill: currentColor;
 	vertical-align: -3px;
+}
+.btn {
+	line-height: 1em;
+	font-family: arial, sans-serif;
+	font-size: @font-size-btn;
+	font-weight: bold;
+	border: 2px solid @green-bright;
+	color: @green-bright;
+	margin: 0;
+	padding: @btn-padding @btn-padding + 8;
+	border-radius: @btn-radius;
+	box-sizing: border-box;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	width: auto;
+	white-space: nowrap;
+	&:hover {
+		background-color: @green-transparent;
+		color: lighten(@green-bright, 10%);
+	}
+	&.solid {
+		background: @green-bright;
+		color: @default-dark;
+		&:hover {
+			background-color: darken(@green-bright, 5%);
+			color: @default-darker;
+		}
+	}
+	&.icon {
+		position: relative;
+		i {
+			position: absolute;
+			left: 14px;
+			line-height: @font-size-btn;
+			font-size: 18px;
+		}
+		span {
+			padding-left: 22px;
+			display: block;
+		}
+		&:hover {
+			//todo: effect
+		}
+
+	}
+	&.lg {
+		padding: @btn-padding + 3 @btn-padding + 14;
+	}
+	&.small {
+		font-size: 11px;
+		padding: @btn-padding - 4 @btn-padding;
+	}
+}
+.form-style {
+	border-radius: @input-radius;
+	outline: none;
+	line-height: @font-size;
+	font-size: @font-size;
+	font-weight: normal;
+	padding: @text-padding;
+	background: transparent;
+	border: 2px solid @default-lighter;
+	color: @silver-dark;
+	&:focus {
+		border-color: @silver-dark;
+		color: @silver-light;
+	}
+	&::-webkit-input-placeholder {
+		font-size: @font-size;
+		line-height: @font-size + 2;
+		color: @silver-darker;
+	}
+	&::-moz-placeholder {
+		font-size: @font-size;
+		line-height: @font-size + 2;
+		color: @silver-darker;
+	}
+	&:-moz-placeholder {
+		font-size: @font-size;
+		line-height: @font-size + 2;
+		color: @silver-darker;
+	}
+	&:-ms-input-placeholder {
+		font-size: @font-size;
+		line-height: @font-size + 2;
+		color: @silver-darker;
+	}
 }
