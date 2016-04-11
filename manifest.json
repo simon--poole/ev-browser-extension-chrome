@@ -7,7 +7,7 @@
         "48": "assets/img/favicon.png",
         "128": "assets/img/icon.png"
     },
-    "version": "1.0.0",
+    "version": "1.1.0",
     "homepage_url": "http://eventvods.com",
     "browser_action": {
         "default_icon": "assets/img/icon.png",
