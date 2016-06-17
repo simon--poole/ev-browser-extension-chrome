@@ -29,6 +29,12 @@ var defaultChannels = {
     "UCJN4ouJkqCpo6OwoK_bEWbA" : { name: "6Rasmus TV", run: true },
     "UCrZTN5qnHqGhZglG3wUWKng" : { name: "6Reynad", run: true },
     "UCP5L0BTkW1pYxlyo6jF2Gvw" : { name: "6TempoStorm", run: true },
+    "UClMlqyYOEqfWNOFT_KMVaeA" : { name: "6Twitch Dota 2 Vods", run: true},
+    "UCFop53hSZZHsW7_vGDTqCZg" : { name: "6CSGO #3", run: true},
+    "UC2u0VkSazsN_of3ifcBKTsA" : { name: "6Hearthstone #2", run: true},
+    "UCzSItlUKaVNWbd7ybbfnFhg" : { name: "3MLG", run: true},
+    "UCxtHAOtBzl3nWm1d80GZhlQ" : { name: "3ECS", run: true},
+    "UCK7CPGf74Fpes6kKLMuAdBg" : { name: "4ELEAGUE", run: true},
 };
 (document.body || document.documentElement)
 .addEventListener('transitionend', function( /*TransitionEvent*/ event) {

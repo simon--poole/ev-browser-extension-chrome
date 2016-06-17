@@ -25,6 +25,7 @@ var defaultChannels = {
     "UCJN4ouJkqCpo6OwoK_bEWbA" : { name: "6Rasmus TV", run: true },
     "UCrZTN5qnHqGhZglG3wUWKng" : { name: "6Reynad", run: true },
     "UCP5L0BTkW1pYxlyo6jF2Gvw" : { name: "6TempoStorm", run: true },
+    "UCv3orfdLg5rLIg6qnkCcitA" : { name: "6LoL Esports VODs & Highlights", run: true }
 };
 
 function initialise() {
@@ -37,6 +38,7 @@ function initialise() {
         length: true,
         channels: defaultChannels
     }, (items) => {
+        var update = false;
         related.checked = items.related;
         comments.checked = items.comments;
         length.checked = items.length;
@@ -44,6 +46,14 @@ function initialise() {
         scope.$apply(function(){
             scope.channels = items.channels;//items.channels;
         });
+        for(var key in defaultChannels){
+            if(typeof channels[key] == "undefined"){
+                channels[key] = defaultChannels[key];
+                chrome.storage.sync.set({
+                    channels: channels
+                });
+            }
+        }
     });
     related.addEventListener('change', saveChanges);
     comments.addEventListener('change', saveChanges);

@@ -52,7 +52,7 @@
         </div>
         <div class="group" ng-show="showChannels" id="channels">
             <input type="text" placeholder="Filter Channels" ng-model="filter.name" class="form-style" />
-            <ul><li ng-repeat="c in channels | toArray | filter:filter | orderBy:'name'">
+            <ul><li ng-repeat="c in channels | toArray | filter:filter | orderBy:'name' track by $index">
             <input type="checkbox" ng-attr-id="{{c.name}}" ng-model="c.run" />
             <label ng-attr-for="{{c.name}}">{{c.name.substring(1, c.name.length)}}</label>
             </li></ul>
