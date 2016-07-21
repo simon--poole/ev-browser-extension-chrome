@@ -7,6 +7,7 @@ var defaultChannels = {
     "UCQJT7rpynlR7SSdn3OyuI_Q" : { name: "0LoLEventVods", run: true },
     "UCeyxJjDWDBg6moUMDj9j4Kg" : { name: "1CSEventVods", run: true },
     "UCr5TB_3vBI0-WHuDCd3du9g" : { name: "2DotaVods", run: true },
+    "UCY7yjSdhxcw5lQhnSF4Wk-A" : { name: "2DotaVods 2", run: true},
     "UC6cCL29i24P9wT8Kws2iq4Q" : { name: "3HSVods", run: true },
     "UCPhab209KEicqPJFAk9IZEA" : { name: "4Onivia", run: true },
     "UCLhS7bMcch5vodboEGpIPlg" : { name: "6What A Play", run: true },
@@ -35,6 +36,7 @@ var defaultChannels = {
     "UCzSItlUKaVNWbd7ybbfnFhg" : { name: "3MLG", run: true},
     "UCxtHAOtBzl3nWm1d80GZhlQ" : { name: "3ECS", run: true},
     "UCK7CPGf74Fpes6kKLMuAdBg" : { name: "4ELEAGUE", run: true},
+    "UCPq2ETz4aAGo2Z-8JisDPIA" : { name: "4ESL Counter-Strike", run: true},
 };
 (document.body || document.documentElement)
 .addEventListener('transitionend', function( /*TransitionEvent*/ event) {
