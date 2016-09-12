@@ -25,7 +25,7 @@ function initialise() {
         length: true,
         channels: defaultChannels
     }, (items) => {
-        if (items.channels[channel].run) {
+        if (items.channels[channel] && items.channels[channel].run) {
             if (items.comments) $(document)
                 .on('DOMSubtreeModified', hideCommentsBinder);
             if (items.related) $(document)
@@ -97,4 +97,5 @@ function hideLengthBinder() {
             .css('text-align', 'center');
     }
 }
+
 initialise();
