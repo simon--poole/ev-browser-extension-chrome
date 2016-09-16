@@ -11,6 +11,22 @@ var hideCommentsButton = "<button id='hideCommentsButton' class='yt-uix-button y
     }
 }, true);
 
+/* listen for messages from extension */
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        if (request === "yt-channel-info-request") {
+            /* send yt channel id/name  */
+            var channelId = $('.yt-user-info > a').attr('data-ytid');
+            var channelName = $('.yt-user-info > a').text()
+            if (channelId && channelName)  {
+                sendResponse({
+                    channelId: channelId,
+                    channelName: channelName
+                });
+            }
+        }
+    });
+
 function checkVideoChanged() {
     if ($('#showCommentsButton')
         .length == 0) initialise();

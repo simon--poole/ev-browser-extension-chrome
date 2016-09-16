@@ -19,6 +19,24 @@
     <body ng-controller="evSettingsController">
         <img src="../assets/img/logo.png" id="logo" />
         <div class="group">
+            <a class="btn lg solid" ng-show="currentChannel.displayAddButton" ng-click="addChannel(currentChannel); currentChannel.displayAddButton=false; showChannels=true">
+                Add "{{ currentChannel.name | limitTo: 10 }}{{ currentChannel.name.length > 10 ? '&hellip;' : ''}}"
+                <svg class="icon">
+                    <symbol id="icon-circle-right" viewBox="0 0 1024 1024">
+                        <title>
+                            circle-right
+                        </title>
+                        <path class="path1" d="M512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM512 928c-229.75 0-416-186.25-416-416s186.25-416 416-416 416 186.25 416 416-186.25 416-416 416z">
+                        </path>
+                        <path class="path2" d="M354.744 706.744l90.512 90.512 285.254-285.256-285.256-285.254-90.508 90.508 194.744 194.746z">
+                        </path>
+                    </symbol>
+                    <use xlink:href="#icon-circle-right">
+                    </use>
+                </svg>
+           </a>
+        </div>
+        <div class="group">
             <a class="btn lg solid" ng-show="!showChannels" ng-click="showChannels = true">
                 Edit Channel List
                 <svg class="icon">

@@ -18,18 +18,33 @@ function initialise() {
         scope.$apply(function(){
             scope.channels = items.channels;//items.channels;
         });
-        for(var key in defaultChannels){
-            if(typeof channels[key] == "undefined"){
-                channels[key] = defaultChannels[key];
-                chrome.storage.sync.set({
-                    channels: channels
-                });
-            }
-        }
     });
+
     related.addEventListener('change', saveChanges);
     comments.addEventListener('change', saveChanges);
     length.addEventListener('change', saveChanges);
+
+    /* get channel id/name from active tab (if on youtube) */
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        if (getHostNameFromUrl(tabs[0].url).match(/^(www\.)?youtube\.com$/))  {
+            chrome.tabs.sendMessage(tabs[0].id, "yt-channel-info-request", function(response) {
+                if (response) {
+                    chrome.storage.sync.get({channels: defaultChannels}, function(items) {
+                        if (items.channels[response.channelId] === undefined)   {
+                            /* yt-channel in active tab is not in channel list -> show add button */
+                            scope.$apply(function() {
+                                scope.currentChannel = {
+                                    id: response.channelId,
+                                    name: response.channelName,
+                                    displayAddButton: true
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+        }
+    });
 }
 
 function saveChanges() {
@@ -38,6 +53,12 @@ function saveChanges() {
         comments: comments.checked,
         length: length.checked
     });
+}
+
+function getHostNameFromUrl(url)   {
+    var p = document.createElement('a');
+    p.href = url;
+    return p.hostname;
 }
 
 document.addEventListener('DOMContentLoaded', initialise, false);

@@ -9,6 +9,15 @@ angular.module('evSettings', [])
         	});
             $scope.showChannels = false;
         };
+        $scope.currentChannel = {
+            displayAddButton: false
+        };
+        $scope.addChannel = function(channel)  {
+            $scope.channels[channel.id] =   {
+                name: "0" + channel.name,
+                run: true
+            }
+        }
     })
     //https://github.com/petebacondarwin/angular-toArrayFilter
     .filter('toArray', function() {
