@@ -17,7 +17,7 @@
         "matches": ["*://www.youtube.com/*", "*://youtube.com/*"],
         "exclude_matches": ["*://www.youtube.com/*&list=*", "*://youtube.com/*&list=*"],
         "css": ["assets/css/style.css"],
-        "js": ["assets/js/jquery.min.js", "assets/js/content_script.js"]
+        "js": ["assets/js/jquery.min.js", "assets/js/channel_list.js", "assets/js/content_script.js"]
     }],
     "permissions": ["activeTab", "storage", "*://*.youtube.com/*"]
 }
