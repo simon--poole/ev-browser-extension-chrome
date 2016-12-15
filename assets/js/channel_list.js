@@ -32,5 +32,6 @@ var defaultChannels = {
     "UClMlqyYOEqfWNOFT_KMVaeA" : { name: "6Twitch Dota 2 Vods", run: true },
     "UCFop53hSZZHsW7_vGDTqCZg" : { name: "6CSGO #3", run: true },
     "UC2u0VkSazsN_of3ifcBKTsA" : { name: "6Hearthstone #2", run: true },
-    "UCv3orfdLg5rLIg6qnkCcitA" : { name: "6LoL Esports VODs & Highlights", run: true }
+    "UCv3orfdLg5rLIg6qnkCcitA" : { name: "6LoL Esports VODs & Highlights", run: true },
+    "UCIquhTRs7QJrzCfiAMwfV8w" : { name: "3Dreamhack Media", run: true }
 };
