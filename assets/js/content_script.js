@@ -1,6 +1,5 @@
 var $comments;
 var $showCommentsButton, $hideCommentsButton;
-var showingComments = false;
 var showCommentsButton = "<paper-button class='style-scope' id='show_comments'><span class='more-button style-scope ytd-video-secondary-info-renderer'>Show comments</span></paper-button>";
 var hideCommentsButton = "<paper-button class='style-scope' id='hide_comments'><span class='more-button style-scope ytd-video-secondary-info-renderer'>Hide comments</span></paper-button>";
 
@@ -60,27 +59,21 @@ function hideCommentsBinder() {
     if ($comments.length > 0) {
         $(document)
             .off('DOMSubtreeModified', hideCommentsBinder);
-        $('#more').after(showCommentsButton);
-		$showCommentsButton = $('#show_comments');
-		$showCommentsButton.after(hideCommentsButton);
-		$hideCommentsButton = $('#hide_comments');
 		hideComments();
-		$showCommentsButton.click(showComments);
-		$hideCommentsButton.click(hideComments);
     }
 }
 
 function hideComments() {
-    $hideCommentsButton.hide();
-	$showCommentsButton.show();
+    // $hideCommentsButton.hide();
+	// $showCommentsButton.show();
 	$comments.hide();
 }
 
-function showComments() {
-    $showCommentsButton.hide();
-	$hideCommentsButton.show();
-    $comments.show();
-}
+// function showComments() {
+//     $showCommentsButton.hide();
+// 	$hideCommentsButton.show();
+//     $comments.show();
+// }
 
 function hideRelatedItemsBinder() {
     $('.watch-sidebar, #player-playlist')
