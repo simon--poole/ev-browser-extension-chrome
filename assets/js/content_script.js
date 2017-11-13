@@ -1,8 +1,8 @@
 var $comments;
 var $showCommentsButton, $hideCommentsButton;
 var showingComments = false;
-var showCommentsButton = "<button id='showCommentsButton' class='yt-uix-button yt-uix-button-size-default yt-uix-expander-head'>Show Comments</button>";
-var hideCommentsButton = "<button id='hideCommentsButton' class='yt-uix-button yt-uix-button-size-default yt-uix-expander-head'>Hide Comments</button>";
+var showCommentsButton = "<paper-button class='style-scope' id='show_comments'><span class='more-button style-scope ytd-video-secondary-info-renderer'>Show comments</span></paper-button>";
+var hideCommentsButton = "<paper-button class='style-scope' id='hide_comments'><span class='more-button style-scope ytd-video-secondary-info-renderer'>Hide comments</span></paper-button>";
 
 (document.body || document.documentElement)
 .addEventListener('transitionend', function( /*TransitionEvent*/ event) {
@@ -14,16 +14,19 @@ var hideCommentsButton = "<button id='hideCommentsButton' class='yt-uix-button y
 /* listen for messages from extension */
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
-        if (request === "yt-channel-info-request") {
-            /* send yt channel id/name  */
-            var channelId = $('.yt-user-info > a').attr('data-ytid');
-            var channelName = $('.yt-user-info > a').text()
-            if (channelId && channelName)  {
-                sendResponse({
-                    channelId: channelId,
-                    channelName: channelName
-                });
-            }
+        if (request === 'yt-channel-info-request') {
+			/* send yt channel id/name  */
+			if($('.yt-user-info > a').attr('href')){
+				var channelId = $('.yt-user-info > a').attr('href').replace(/^\/channel\//, '');
+				var channelName = $('.yt-user-info > a').text()
+				if (channelId && channelName)  {
+					sendResponse({
+						channelId: channelId,
+						channelName: channelName
+					});
+				}
+			}
+
         }
     });
 
@@ -33,8 +36,8 @@ function checkVideoChanged() {
 }
 
 function initialise() {
-    var channel = $('.yt-user-info > a')
-        .attr('data-ytid');
+	if(!$('#owner-name > a').length) return setTimeout(initialise, 500);
+    var channel = $('#owner-name > a').attr('href').replace(/^\/channel\//, '');
     chrome.storage.sync.get({
         related: true,
         comments: true,
@@ -53,36 +56,29 @@ function initialise() {
 }
 
 function hideCommentsBinder() {
-    $comments = $('#watch-discussion');
+    $comments = $('#comments');
     if ($comments.length > 0) {
         $(document)
             .off('DOMSubtreeModified', hideCommentsBinder);
-        $comments.before(showCommentsButton);
-        $comments.before(hideCommentsButton);
-        $showCommentsButton = $('#showCommentsButton');
-        $hideCommentsButton = $('#hideCommentsButton');
-        hideCommentsLoop();
-        $comments.on('DOMSubtreeModified', hideCommentsLoop);
+        $('#more').after(showCommentsButton);
+		$showCommentsButton = $('#show_comments');
+		$showCommentsButton.after(hideCommentsButton);
+		$hideCommentsButton = $('#hide_comments');
+		hideComments();
+		$showCommentsButton.click(showComments);
+		$hideCommentsButton.click(hideComments);
     }
 }
 
-function hideCommentsLoop() {
-    if (!showingComments) hideComments();
-}
-
 function hideComments() {
-    showingComments = false;
-    $comments.hide();
     $hideCommentsButton.hide();
-    $showCommentsButton.show()
-        .on('click', showComments)
+	$showCommentsButton.show();
+	$comments.hide();
 }
 
 function showComments() {
-    showingComments = true;
     $showCommentsButton.hide();
-    $hideCommentsButton.show()
-        .on('click', hideComments);
+	$hideCommentsButton.show();
     $comments.show();
 }
 

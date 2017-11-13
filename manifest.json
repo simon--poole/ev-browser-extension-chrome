@@ -19,5 +19,5 @@
         "css": ["assets/css/style.css"],
         "js": ["assets/js/jquery.min.js", "assets/js/channel_list.js", "assets/js/content_script.js"]
     }],
-    "permissions": ["activeTab", "storage", "*://*.youtube.com/*"]
+    "permissions": ["tabs", "storage", "*://*.youtube.com/*"]
 }
