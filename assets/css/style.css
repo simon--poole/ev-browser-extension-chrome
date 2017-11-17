@@ -3,3 +3,16 @@
     width: 100%;
     text-transform: uppercase;
 }
+.hideRelatedItems #items .ytd-watch-next-secondary-results-renderer:not(.show) {
+	display: none;
+}
+.hideRelatedItems ytd-watch[theatre] paper-button.yt-next-continuation {
+	margin-top: 40px;
+}
+/* .hideRelatedItems paper-button.yt-next-continuation::after {
+	display: inline-block;
+	content: 'SHOW RELATED ITEMS';
+}
+.hideRelatedItems paper-button.yt-next-continuation yt-formatted-string {
+	display: none;
+} */
