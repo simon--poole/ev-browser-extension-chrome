@@ -16,9 +16,9 @@
        "48": "assets/img/favicon.png"
 	},
 	"manifest_version": 2,
-    "name": "EventVODs Spoiler Prevention",
+    "name": "Eventvods Spoiler Prevention",
     "permissions": [ "tabs", "storage", "*://*.youtube.com/*", "https://www.googleapis.com/*" ],
     "short_name": "EV",
     "update_url": "https://clients2.google.com/service/update2/crx",
-    "version": "1.1.8"
+    "version": "1.1.9"
  }
