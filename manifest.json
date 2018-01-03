@@ -14,15 +14,11 @@
     "icons": {
        "128": "assets/img/icon.png",
        "48": "assets/img/favicon.png"
-    },
-   //"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzT+JydOQfBPWLSVunu2adsDq8fkvSYoGjLKuFR2Rf/8OI58Lx1FV0lcEXixmdVYHFBaFFrgcapaIKdwwlDwJCen4q6tB03XRT7iummINapHMl1gj63ZkTN9v3RSr2Dz/UWvPhEUgJedgdobA9YEa0Y73b2RqIWqzxfyD+LOZubxucCEdrfsrdk3H8VJAWKcwYGDQCAmY9vTCUfKp/qwTgEAatNCut0pCoAMHxHILHUuqHh35S/tTwZlD2l3TrYhqXZ4WpVZtPu0jErj/OCeripxCtDEHNjdAB6AiJhAr1Geoc+PkaTmff8dUwdwABSyjFUfdM+HiJBgxAgkguOWucwIDAQAB",
-    "manifest_version": 2,
+	},
+	"manifest_version": 2,
     "name": "EventVODs Spoiler Prevention",
-    // 2017-11-07 Justin Steel - Modified permissions from activeTab to tabs for new version of youtube.  Note: this allows automatic generation of the "add x channel" when adding it to your filter
-    // 2017-12-29 Justin Steel - Added googleAPIs to remove dependency on screen scraping for the channel ID
     "permissions": [ "tabs", "storage", "*://*.youtube.com/*", "https://www.googleapis.com/*" ],
     "short_name": "EV",
     "update_url": "https://clients2.google.com/service/update2/crx",
-    "version": "1.1.7"
+    "version": "1.1.8"
  }
- 
