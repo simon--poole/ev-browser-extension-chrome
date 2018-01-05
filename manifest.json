@@ -17,7 +17,7 @@
 	},
 	"manifest_version": 2,
     "name": "Eventvods Spoiler Prevention",
-    "permissions": [ "tabs", "storage", "*://*.youtube.com/*", "https://www.googleapis.com/*" ],
+    "permissions": ["storage", "*://*.youtube.com/*", "https://www.googleapis.com/*" ],
     "short_name": "EV",
     "update_url": "https://clients2.google.com/service/update2/crx",
     "version": "1.1.9"
